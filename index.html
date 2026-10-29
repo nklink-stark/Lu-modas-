@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lu Modas - Link na Bio</title>
+  
+  <!-- Fontes do Google -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Ícones Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: #EFE7DC;
+      font-family: 'Montserrat', sans-serif;
+      color: #5C4B37;
+      display: flex;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 480px;
+      background-color: #EFE7DC;
+      padding-bottom: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    /* BANNER TOPO */
+    .header-banner {
+      width: 100%;
+      margin-bottom: 25px;
+    }
+
+    .header-banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* GRID DE LINKS SUPERIOR (3 COLUNAS) */
+    .grid-top {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      width: 90%;
+      margin-bottom: 25px;
+    }
+
+    .card-top {
+      background: #F8F5F0;
+      border: 1.5px solid #D4AF37;
+      border-radius: 20px;
+      padding: 0 0 10px 0; /* Removido o padding do topo e das laterais */
+      overflow: hidden; /* Corta a imagem nos cantos arredondados */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      color: #5C4B37;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .card-top:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .card-top .img-box {
+      width: 100%;
+      aspect-ratio: 9/16;
+      overflow: hidden;
+      margin-bottom: 8px;
+    }
+
+    .card-top .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .card-top .icon {
+      font-size: 18px;
+      color: #C5A059;
+      margin-bottom: 4px;
+    }
+
+    .card-top .title {
+      font-family: 'Cinzel', serif;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      text-align: center;
+    }
+
+    .card-top .subtitle {
+      font-size: 10px;
+      color: #8C7A6B;
+      margin-top: 2px;
+      text-align: center;
+    }
+
+    /* GRID DE LINKS INFERIOR (2 COLUNAS) */
+    .grid-bottom {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 15px;
+      width: 90%;
+      margin-bottom: 30px;
+    }
+
+    .card-bottom {
+      background: #F8F5F0;
+      border: 1.5px solid #D4AF37;
+      border-radius: 24px;
+      padding: 0;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-decoration: none;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    }
+
+    .card-bottom:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 15px rgba(212, 175, 55, 0.2);
+    }
+
+    .card-bottom .img-box {
+      width: 100%;
+      aspect-ratio: 1/1;
+      overflow: hidden;
+    }
+
+    .card-bottom .img-box img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* RODAPÉ COM LOGO (FULL WIDTH) */
+    .footer-logo {
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    .footer-logo img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    
+    <!-- 1. BANNER DO TOPO -->
+    <header class="header-banner">
+      <img id="img-topo" src="lu.jpg" alt="Lu Modas Header">
+    </header>
+
+    <!-- 2. CARDS SUPERIORES (3 COLUNAS) -->
+    <section class="grid-top">
+      
+      <!-- Contato -->
+      <a href="https://wa.me/5562981381330" target="_blank" class="card-top">
+        <div class="img-box">
+          <img id="img-contato" src="zap.jpg" alt="Contato">
+        </div>
+        <div class="icon"><i class="fa-solid fa-phone"></i></div>
+        <div class="title">Contato</div>
+        <div class="subtitle">Fale Conosco</div>
+      </a>
+
+      <!-- Catálogo -->
+      <a href="roupa.html" target="_blank" class="card-top">
+        <div class="img-box">
+          <img id="img-catalogo" src="loja.jpg" alt="Catálogo">
+        </div>
+        <div class="icon"><i class="fa-solid fa-shirt"></i></div>
+        <div class="title">Catálogo</div>
+        <div class="subtitle">Ver Coleção</div>
+      </a>
+
+      <!-- Instagram -->
+      <a href="https://www.instagram.com/moda_lu2026?dlrf=dm5odHU4c2h0YzJo" target="_blank" class="card-top">
+        <div class="img-box">
+          <img id="img-instagram" src="insta.jpg" alt="Instagram">
+        </div>
+        <div class="icon"><i class="fa-brands fa-instagram"></i></div>
+        <div class="title">Instagram</div>
+        <div class="subtitle">@moda.lu2026</div>
+      </a>
+
+    </section>
+
+    <!-- 3. CARDS INFERIORES (2 COLUNAS) -->
+    <section class="grid-bottom">
+      
+      <!-- Equipe -->
+      <a href="#" class="card-bottom">
+        <div class="img-box">
+          <img id="img-equipe" src="card.png" alt="Equipe">
+        </div>
+      </a>
+
+      <!-- Sacola/Loja -->
+      <a href="#" class="card-bottom">
+        <div class="img-box">
+          <img id="img-sacola" src="sacola.png" alt="Sacola">
+        </div>
+      </a>
+
+    </section>
+
+    <!-- 4. LOGO DO RODAPÉ -->
+    <footer class="footer-logo">
+      <img id="img-rodape" src="rodape.png" alt="Lu Modas Logo">
+    </footer>
+
+  </div>
+
+  <!-- CONFIGURAÇÃO DAS IMAGENS -->
+  <script>
+    const CONFIG = {
+      imagemTopo: 'lu.jpg',
+      imagemRodape: 'rodape.png',
+      
+      cardContato: 'zap.jpg',
+      cardCatalogo: 'loja.jpg',
+      cardInstagram: 'insta.jpg',
+      cardEquipe: 'card.png',
+      cardSacola: 'sacola.png',
+    };
+
+    document.getElementById('img-topo').src = CONFIG.imagemTopo;
+    document.getElementById('img-rodape').src = CONFIG.imagemRodape;
+    document.getElementById('img-contato').src = CONFIG.cardContato;
+    document.getElementById('img-catalogo').src = CONFIG.cardCatalogo;
+    document.getElementById('img-instagram').src = CONFIG.cardInstagram;
+    document.getElementById('img-equipe').src = CONFIG.cardEquipe;
+    document.getElementById('img-sacola').src = CONFIG.cardSacola;
+  </script>
+
+</body>
+</html>
