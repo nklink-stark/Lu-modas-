@@ -1,0 +1,1010 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" name="viewport"/>
+  <meta content="mobile_tab" name="shell-type"/>
+
+  <style>
+    @layer base {
+      html, body { width: 100vw; margin: 0; padding: 0; }
+      body { overscroll-behavior: none; }
+      .pb-safe { padding-bottom: env(safe-area-inset-bottom, 0px); }
+      .pt-safe { padding-top: env(safe-area-inset-top, 0px); }
+      main > :first-child { margin-top: 0 !important; }
+      main > :last-child { margin-bottom: 0 !important; }
+    }
+    ::-webkit-scrollbar { display: none; }
+    body { min-height: max(884px, 100dvh); }
+    /* Utilitário para esconder a barra de rolagem do carrossel */
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+  </style>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script id="tailwind-config">
+    tailwind.config = { 
+      darkMode: "class", 
+      theme: { 
+        extend: { 
+          "colors": { "on-error": "#ffffff", "on-primary-fixed-variant": "#46464a", "primary-fixed-dim": "#c7c6ca", "secondary": "#595e69", "on-surface": "#1a1c1a", "on-tertiary-fixed-variant": "#6f3813", "on-secondary": "#ffffff", "on-secondary-container": "#5e636e", "secondary-container": "#dbdfec", "surface": "#faf9f6", "on-tertiary-fixed": "#321200", "on-surface-variant": "#46464b", "on-primary": "#ffffff", "outline": "#76777b", "inverse-on-surface": "#f2f1ee", "tertiary": "#000000", "error-container": "#ffdad6", "surface-container-highest": "#e3e2e0", "on-secondary-fixed-variant": "#424751", "primary-container": "#1b1b1f", "on-background": "#1a1c1a", "on-error-container": "#93000a", "on-tertiary-container": "#b87349", "inverse-primary": "#c7c6ca", "surface-container-lowest": "#ffffff", "surface-tint": "#5e5e62", "surface-container-low": "#f4f3f0", "tertiary-fixed-dim": "#ffb68c", "tertiary-fixed": "#ffdbc9", "secondary-fixed-dim": "#c2c6d3", "error": "#ba1a1a", "outline-variant": "#c7c6cb", "surface-bright": "#faf9f6", "primary": "#000000", "background": "#faf9f6", "on-primary-container": "#848387", "on-secondary-fixed": "#171c25", "surface-dim": "#dbdad7", "surface-container-high": "#e9e8e5", "inverse-surface": "#2f312f", "primary-fixed": "#e3e2e6", "on-primary-fixed": "#1b1b1f", "tertiary-container": "#321200", "surface-variant": "#e3e2e0", "on-tertiary": "#ffffff", "surface-container": "#efeeeb", "secondary-fixed": "#dee2ef" }, 
+          "borderRadius": { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" }, 
+          "spacing": { "margin": "1rem", "space-2xl": "4rem", "gutter-desktop": "1.5rem", "space-xl": "2.5rem", "space-md": "1rem", "space-sm": "0.5rem", "margin-desktop": "4rem", "space-xs": "0.25rem", "space-lg": "1.5rem", "margin-tablet": "2rem", "gutter": "1rem", "space-3xl": "6rem" }, 
+          "fontFamily": { "price-lg": ["Hanken Grotesk"], "headline-xl-mobile": ["Hanken Grotesk"], "body-md": ["Hanken Grotesk"], "headline-lg-mobile": ["Hanken Grotesk"], "body-lg": ["Hanken Grotesk"], "headline-xl": ["Hanken Grotesk"], "label-caps": ["Hanken Grotesk"], "body-sm": ["Hanken Grotesk"], "label-sm": ["Hanken Grotesk"], "price-md": ["Hanken Grotesk"], "label-md": ["Hanken Grotesk"], "headline-sm": ["Hanken Grotesk"], "headline-md": ["Hanken Grotesk"], "headline-lg": ["Hanken Grotesk"] }, 
+          "fontSize": { "price-lg": ["1.25rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.02em", "fontWeight": "500" }], "headline-xl-mobile": ["2.25rem", { "lineHeight": "2.625rem", "letterSpacing": "-0.03em", "fontWeight": "500" }], "body-md": ["0.9375rem", { "lineHeight": "1.5rem", "letterSpacing": "0em", "fontWeight": "400" }], "headline-lg-mobile": ["1.75rem", { "lineHeight": "2.125rem", "letterSpacing": "-0.02em", "fontWeight": "500" }], "body-lg": ["1.125rem", { "lineHeight": "1.75rem", "letterSpacing": "-0.01em", "fontWeight": "400" }], "headline-xl": ["4rem", { "lineHeight": "4.25rem", "letterSpacing": "-0.04em", "fontWeight": "500" }], "label-caps": ["0.6875rem", { "lineHeight": "0.875rem", "letterSpacing": "0.12em", "fontWeight": "600" }], "body-sm": ["0.8125rem", { "lineHeight": "1.25rem", "letterSpacing": "0.01em", "fontWeight": "400" }], "label-sm": ["0.75rem", { "lineHeight": "1rem", "letterSpacing": "0.02em", "fontWeight": "500" }], "price-md": ["0.9375rem", { "lineHeight": "1.25rem", "letterSpacing": "-0.01em", "fontWeight": "500" }], "label-md": ["0.875rem", { "lineHeight": "1.125rem", "letterSpacing": "0.01em", "fontWeight": "500" }], "headline-sm": ["1.125rem", { "lineHeight": "1.5rem", "letterSpacing": "-0.01em", "fontWeight": "600" }], "headline-md": ["1.5rem", { "lineHeight": "1.875rem", "letterSpacing": "-0.02em", "fontWeight": "500" }], "headline-lg": ["2.5rem", { "lineHeight": "2.875rem", "letterSpacing": "-0.03em", "fontWeight": "500" }] } 
+        } 
+      } 
+    };
+  </script>
+
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+</head>
+<body class="bg-background text-on-surface">
+
+  <!-- Header / Cabeçalho -->
+  <header class="sticky top-0 z-50 w-full bg-surface border-b border-surface-container-highest pt-safe transition-colors">
+    <div class="h-14 flex items-center justify-center px-margin">
+      <h1 class="font-headline-md text-headline-md text-on-surface tracking-wide uppercase font-semibold">
+        Lu Modas
+      </h1>
+    </div>
+  </header>
+
+  <!-- Hero Section Editorial -->
+  <section class="relative w-full overflow-hidden bg-surface-container-low px-margin py-space-md">
+    <div class="relative w-full aspect-[4/5] rounded-none overflow-hidden bg-surface-container">
+      <div class="bg-cover bg-center w-full h-full flex flex-col justify-end p-space-md" style="background-image: url('p0.jpg')">
+        <div class="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent"></div>
+        <div class="relative z-10 flex flex-col gap-space-xs">
+          <div class="inline-flex self-start px-space-xs py-0.5 bg-surface text-on-surface font-label-caps text-label-caps uppercase tracking-wider">
+            Frete Grátis acima de R$ 299
+          </div>
+          <h2 class="font-headline-lg-mobile text-headline-lg-mobile text-on-primary font-medium tracking-tight mt-space-xs">
+            Lu  Modas 
+          </h2>
+          <p class="font-body-sm text-body-sm text-surface-variant font-normal">
+            Camisetas 100% algodão + bermuda estampada. Leve , fresco e pronto para usar 
+          </p>
+          <a class="mt-space-sm inline-flex items-center justify-between w-full h-12 px-space-md bg-surface text-on-surface font-label-caps text-label-caps tracking-widest uppercase transition-opacity active:opacity-90" href="#catalogo">
+            <span>Explorar Coleção</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SEÇÃO DE CARROSSEL DE PERFUMES (10 CARDS) -->
+  <section class="py-space-md bg-surface border-b border-surface-container-highest overflow-hidden">
+    <div class="flex items-center justify-between px-margin mb-space-xs">
+      <div>
+        <span class="font-label-caps text-[10px] text-secondary uppercase tracking-widest">Exclusivo</span>
+        <h3 class="font-headline-sm text-headline-sm text-on-surface">Alta Perfumaria</h3>
+      </div>
+      <span class="font-label-caps text-[10px] text-secondary">10 Fragrâncias</span>
+    </div>
+
+    <!-- Container de Rolagem Horizontal -->
+    <div class="flex gap-3 overflow-x-auto no-scrollbar snap-x snap-mandatory py-space-xs px-4">
+      
+      <!-- Card Perfume 1 -->
+      <article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+        <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+          <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume1.jpg')"></div>
+          
+          <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+            <span class="material-symbols-outlined text-[15px]">favorite</span>
+          </button>
+        </div>
+        <div class="flex flex-col pt-2">
+          <span data-product-name="Aura Sagrada" class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Aura Sagrada</span>
+          <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Brand collection- 25ml</h4>
+          <div class="flex items-center gap-1 my-1">
+            <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+            <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+          </div>
+          <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+          <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+          </button>
+        </div>
+      </article>
+
+      <!-- Card Perfume 2 -->
+      <article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+        <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+          <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume2.jpg')"></div>
+         
+          <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+            <span class="material-symbols-outlined text-[15px]">favorite</span>
+          </button>
+        </div>
+        <div class="flex flex-col pt-2">
+          <span data-product-name="Eclipse Azul" class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Eclipse Azul</span>
+          <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Brand collection 25ml </h4>
+          <div class="flex items-center gap-1 my-1">
+            <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+            <span class="font-label-sm text-[10px] text-secondary">(4.8)</span>
+          </div>
+          <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+          <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+          </button>
+        </div>
+      </article>
+
+      <!-- Card Perfume 3 -->
+      <article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+        <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+          <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume3.jpg')"></div>
+          
+          <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+            <span class="material-symbols-outlined text-[15px]">favorite</span>
+          </button>
+        </div>
+        <div class="flex flex-col pt-2">
+          <span data-product-name="Ouro Absoluto"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Ouro Absoluto</span>
+          <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium"> Brand collection 25ml</h4>
+          <div class="flex items-center gap-1 my-1">
+            <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+            <span class="font-label-sm text-[10px] text-secondary">(5.0)</span>
+          </div>
+          <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+          <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+          </button>
+        </div>
+      </article>
+
+      <!-- Card Perfume 4 -->
+      <article data-category="perfume"  class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+        <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+          <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume4.jpg')"></div>
+          <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+            <span class="material-symbols-outlined text-[15px]">favorite</span>
+          </button>
+        </div>
+        <div class="flex flex-col pt-2">
+          <span data-product-name="Serpente Dourada"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Serpente Dourada</span>
+          <h4 class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Musama white intense </h4>
+          <div class="flex items-center gap-1 my-1">
+            <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ☆</div>
+            <span class="font-label-sm text-[10px] text-secondary">(4.7)</span>
+          </div>
+          <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+          <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+          </button>
+        </div>
+      </article>
+
+      <!-- Card Perfume 5 -->
+      <article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+        <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+          <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume5.jpg')"></div>
+          <div class="absolute top-1.5 left-1.5 px-1 py-0.5 bg-primary text-on-primary font-label-caps text-[9px] uppercase tracking-wider">
+            Novo
+          </div>
+          <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+            <span class="material-symbols-outlined text-[15px]">favorite</span>
+          </button>
+        </div>
+        <div class="flex flex-col pt-2">
+          <span data-product-name="Floral Doce"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Floral Doce</span>
+          <h4 class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Fame blooming pink</h4>
+          <div class="flex items-center gap-1 my-1">
+            <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+            <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+          </div>
+          <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+          <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+            <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+          </button>
+        </div>
+      </article>
+<!-- Card Perfume 6 -->
+<article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+  <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume6.jpg')"></div>
+    <div class="absolute top-1.5 left-1.5 px-1 py-0.5 bg-primary text-on-primary font-label-caps text-[9px] uppercase tracking-wider">
+      EDP
+    </div>
+    <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+      <span class="material-symbols-outlined text-[15px]">favorite</span>
+    </button>
+  </div>
+  <div class="flex flex-col pt-2">
+    <span data-product-name="Noite Árabe"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Noite Árabe </span>
+    <h4 class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Arabic collection 25ml</h4>
+    <div class="flex items-center gap-1 my-1">
+      <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+      <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+    </div>
+    <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+    <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+    </button>
+  </div>
+</article>
+<!-- Card Perfume 7 -->
+<article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+  <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume7.jpg')"></div>
+   
+    <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+      <span class="material-symbols-outlined text-[15px]">favorite</span>
+    </button>
+  </div>
+  <div class="flex flex-col pt-2">
+    <span data-product-name="Tentação Rosa"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Tentação Rosa </span>
+    <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Brand collection 25ml</h4>
+    <div class="flex items-center gap-1 my-1">
+      <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+      <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+    </div>
+    <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+    <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+    </button>
+  </div>
+</article>
+<!-- Card Perfume 8 -->
+<article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+  <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume8.jpg')"></div>
+
+    <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+      <span class="material-symbols-outlined text-[15px]">favorite</span>
+    </button>
+  </div>
+  <div class="flex flex-col pt-2">
+    <span data-product-name="Deusa Dourada"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Deusa Dourada </span>
+    <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Brand collection 25ml</h4>
+    <div class="flex items-center gap-1 my-1">
+      <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+      <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+    </div>
+    <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+    <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+    </button>
+  </div>
+</article>
+<!-- Card Perfume 9 -->
+<article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+  <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume9.jpg')"></div>
+   
+    <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+      <span class="material-symbols-outlined text-[15px]">favorite</span>
+    </button>
+  </div>
+  <div class="flex flex-col pt-2">
+    <span
+  data-product-name="Robô Prateado"
+  class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">
+  Robô Prateado
+</span>
+
+<h4
+  data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">
+  Brand Collection 25ml
+</h4>
+    <div class="flex items-center gap-1 my-1">
+      <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+      <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+    </div>
+    <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+    <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+    </button>
+  </div>
+</article>
+<!-- Card Perfume 10 -->
+<article data-category="perfume" class="snap-start shrink-0 w-[170px] flex flex-col bg-surface border border-surface-container-highest p-2.5 relative group shadow-sm">
+  <div class="relative w-full aspect-square bg-surface-container overflow-hidden flex items-center justify-center">
+    <div class="bg-cover bg-center w-full h-full" style="background-image: url('perfume10.jpg')"></div>
+   
+    <button aria-label="Favoritar" class="fav-btn absolute top-1.5 right-1.5 w-6 h-6 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+      <span class="material-symbols-outlined text-[15px]">favorite</span>
+    </button>
+  </div>
+  <div class="flex flex-col pt-2">
+    <span data-product-name="Laço Rosa"class="font-label-caps text-[9px] text-secondary uppercase tracking-wider truncate">Laço Rosa</span>
+    <h4 data-product-brand="Brand Collection 25ml"
+  class="font-body-sm text-[12px] leading-tight text-on-surface truncate font-medium">Brand collection 25ml</h4>
+    <div class="flex items-center gap-1 my-1">
+      <div class="flex text-amber-500 text-[10px]">★ ★ ★ ★ ★</div>
+      <span class="font-label-sm text-[10px] text-secondary">(4.9)</span>
+    </div>
+    <span class="font-price-md text-[13px] text-on-surface font-semibold">R$ 99,99</span>
+    <button class="add-cart-btn mt-2 w-full h-7 bg-surface-container text-on-surface font-label-caps text-[10px] tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+      <span class="material-symbols-outlined text-[14px]">add</span> Sacola
+    </button>
+  </div>
+</article>
+    </div>
+    
+  </section>
+
+  <!-- Curadoria / Cabeçalho de Seção -->
+  <div class="flex items-center justify-between px-margin pt-space-md pb-space-xs" id="catalogo">
+    <div>
+      <span class="font-label-caps text-label-caps text-secondary uppercase tracking-widest">Catálogo</span>
+      <h3 class="font-headline-sm text-headline-sm text-on-surface">Seleção Masculina</h3>
+    </div>
+    <span class="font-label-caps text-label-caps text-secondary">12 Peças</span>
+  </div>
+
+  <!-- Catálogo de 12 Produtos em Grid de 2 Colunas -->
+  <section class="grid grid-cols-2 gap-x-space-sm gap-y-space-md px-margin py-space-sm">
+    
+    <!-- Produto 1 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" style="background-image: url('p1.jpg')"></div>
+        <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-wider">
+          Novo
+        </div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto </span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto tubarão marinho - branco </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 2 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" style="background-image: url('p2.jpg')"></div>
+        <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-secondary text-on-secondary font-label-caps text-label-caps uppercase tracking-wider">
+          Essencial
+        </div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto </span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto oceano - marrom</h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 3 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" style="background-image: url('p3.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto lagosta coral - vinho </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 4 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" style="background-image: url('p4.jpg')"></div>
+        <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-on-tertiary-container text-on-tertiary font-label-caps text-label-caps uppercase tracking-wider">
+          Destaque
+        </div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto tropical Havaí -preto </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 5 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Editorial close-up of a sand beige pure linen button-up long sleeve shirt on a male model." style="background-image: url('p5.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto </span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto tubarão marinho - cinza </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 6 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Editorial close-up of a sand beige pure linen button-up long sleeve shirt on a male model." style="background-image: url('p6.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto </span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto oceano - Azul marinho </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 7 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Editorial close-up of a sand beige pure linen button-up long sleeve shirt on a male model." style="background-image: url('p7.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Conjunto</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">Conjunto Recifes colorido - Areia </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 129,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 8 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Deep navy blue extra fine merino wool crewneck sweater." style="background-image: url('p8.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Camisa Social</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">kit 3 camisa social lisa</h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 299,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 9 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Beige tailored linen casual shorts for men." style="background-image: url('p9.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Camisa social</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">kit 3 camisa social- listrada</h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 299,00</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 10 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Stone wash soft denim casual shirt worn open over a white tank top on a male model." style="background-image: url('p10.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Camisas</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">uma Camisa social lisa</h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 99,99</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 11 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Long classical heavy wool black overcoat on a tall male silhouette." style="background-image: url('p11.jpg')"></div>
+        <div class="absolute top-2 left-2 px-1.5 py-0.5 bg-primary text-on-primary font-label-caps text-label-caps uppercase tracking-wider">
+          Premium
+        </div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Camisa social</span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">kit duas camisa social estampada </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 199,99</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+
+    <!-- Produto 12 -->
+    <article class="flex flex-col bg-surface group relative">
+      <div class="relative w-full aspect-[3/4] bg-surface-container overflow-hidden">
+        <div class="bg-cover bg-center w-full h-full" data-alt="Crisp white minimal low-top leather sneakers with off-white cupsole." style="background-image: url('p12.jpg')"></div>
+        <button aria-label="Favoritar" class="fav-btn absolute top-2 right-2 w-7 h-7 flex items-center justify-center bg-surface/80 text-on-surface backdrop-blur-sm active:scale-95">
+          <span class="material-symbols-outlined text-[16px]">favorite</span>
+        </button>
+      </div>
+      <div class="flex flex-col pt-space-xs pb-1">
+        <span class="font-label-caps text-label-caps text-secondary uppercase tracking-wider">Camisa Basica </span>
+        <h4 class="font-body-sm text-body-sm text-on-surface truncate font-normal">uma camisa 100% algudão  </h4>
+        <div class="flex items-baseline justify-between mt-0.5">
+          <span class="font-price-md text-price-md text-on-surface font-semibold">R$ 99,99</span>
+        </div>
+        <button class="add-cart-btn mt-space-xs w-full h-8 bg-surface-container text-on-surface font-label-caps text-label-caps tracking-wider uppercase flex items-center justify-center gap-1 active:bg-primary active:text-on-primary transition-colors">
+          <span class="material-symbols-outlined text-[15px]">add</span> Sacola
+        </button>
+      </div>
+    </article>
+    
+
+  </section>
+
+
+  <script>
+    // Microinterações de Favoritos & Adicionar à Sacola
+    document.querySelectorAll('.fav-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const icon = btn.querySelector('.material-symbols-outlined');
+        const isFilled = icon.style.fontVariationSettings?.includes("'FILL' 1");
+        if (isFilled) {
+          icon.style.fontVariationSettings = "'FILL' 0";
+          icon.classList.remove('text-on-tertiary-container');
+        } else {
+          icon.style.fontVariationSettings = "'FILL' 1";
+          icon.classList.add('text-on-tertiary-container');
+        }
+      });
+    });
+
+    const toast = document.getElementById('cart-toast');
+    let toastTimer;
+
+    document.querySelectorAll('.add-cart-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">done</span> Ok';
+        btn.classList.add('bg-primary', 'text-on-primary');
+        
+        clearTimeout(toastTimer);
+        toast.classList.remove('translate-y-32');
+        toastTimer = setTimeout(() => {
+          toast.classList.add('translate-y-32');
+          btn.innerHTML = '<span class="material-symbols-outlined text-[14px]">add</span> Sacola';
+          btn.classList.remove('bg-primary', 'text-on-primary');
+        }, 2200);
+      });
+    });
+  </script>
+</body>
+
+<!-- PEDIDO PELO WHATSAPP - LU MODA -->
+<style>
+  #lu-pedido-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    background: rgba(0,0,0,.78);
+    align-items: center;
+    justify-content: center;
+    padding: 16px;
+    font-family: Arial, sans-serif;
+  }
+
+  #lu-pedido-box {
+    background: #fff;
+    color: #222;
+    width: 100%;
+    max-width: 400px;
+    max-height: 92vh;
+    overflow-y: auto;
+    padding: 22px;
+    border-radius: 18px;
+    box-sizing: border-box;
+  }
+
+  #lu-pedido-box h2 {
+    margin: 0 0 8px;
+    font-size: 23px;
+  }
+
+  #lu-produto-escolhido {
+    margin: 8px 0 16px;
+    color: #666;
+  }
+
+  #lu-imagem-produto {
+    display: none;
+    width: 100%;
+    max-height: 240px;
+    object-fit: contain;
+    background: #f7f7f7;
+    border-radius: 12px;
+    margin-bottom: 14px;
+  }
+
+  #lu-pedido-box label {
+    display: block;
+    margin: 14px 0 6px;
+    font-weight: bold;
+    font-size: 14px;
+  }
+
+  #lu-pedido-box input,
+  #lu-pedido-box select,
+  #lu-pedido-box textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 9px;
+    box-sizing: border-box;
+    background: #fff;
+    font-size: 16px;
+  }
+
+  .lu-pedido-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+  }
+
+  .lu-pedido-botoes button {
+    flex: 1;
+    padding: 13px 8px;
+    border: none;
+    border-radius: 9px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  #lu-enviar-whatsapp {
+    background: #25D366;
+    color: #fff;
+  }
+
+  #lu-fechar-pedido {
+    background: #eee;
+    color: #222;
+  }
+
+  .lu-campo-oculto {
+    display: none !important;
+  }
+</style>
+
+<div id="lu-pedido-overlay">
+  <div id="lu-pedido-box">
+    <h2>Finalize seu pedido</h2>
+
+    <img id="lu-imagem-produto" src="" alt="Imagem do produto selecionado">
+
+    <p id="lu-produto-escolhido">Produto selecionado</p>
+
+    <form id="lu-form-pedido">
+      <div id="lu-campo-tamanho">
+        <label for="lu-tamanho">Tamanho da roupa</label>
+        <select id="lu-tamanho">
+          <option value="">Selecione o tamanho</option>
+          <option value="P">P</option>
+          <option value="M">M</option>
+          <option value="G">G</option>
+          <option value="GG">GG</option>
+          <option value="Único">Tamanho único</option>
+        </select>
+      </div>
+
+      <div id="lu-campo-cor">
+        <label for="lu-cor">Cor da roupa</label>
+        <input id="lu-cor" type="text"
+          placeholder="Ex.: preto, branco, azul">
+      </div>
+
+      <div>
+        <label for="lu-quantidade">Quantidade</label>
+        <input id="lu-quantidade" type="number"
+          min="1" value="1" required>
+      </div>
+
+      <label for="lu-observacao">Observações</label>
+      <textarea id="lu-observacao" rows="2"
+        placeholder="Algum detalhe do pedido?"></textarea>
+
+      <div class="lu-pedido-botoes">
+        <button type="button" id="lu-fechar-pedido">
+          Cancelar
+        </button>
+        <button type="submit" id="lu-enviar-whatsapp">
+          Pedir no WhatsApp
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+<script>
+(function () {
+  const WHATSAPP = "556281381330";
+
+  const overlay = document.getElementById("lu-pedido-overlay");
+  const formulario = document.getElementById("lu-form-pedido");
+  const imagemProduto = document.getElementById("lu-imagem-produto");
+  const produtoTexto = document.getElementById("lu-produto-escolhido");
+
+  const campoTamanho = document.getElementById("lu-campo-tamanho");
+  const campoCor = document.getElementById("lu-campo-cor");
+  const tamanhoInput = document.getElementById("lu-tamanho");
+  const corInput = document.getElementById("lu-cor");
+  const quantidadeInput = document.getElementById("lu-quantidade");
+  const observacaoInput = document.getElementById("lu-observacao");
+  const fecharBotao = document.getElementById("lu-fechar-pedido");
+
+  let produtoAtual = "";
+  let marcaAtual = "";
+  let precoAtual = "";
+  let imagemAtual = "";
+  let tipoAtual = "roupa";
+
+  if (
+    !overlay || !formulario || !imagemProduto || !produtoTexto ||
+    !campoTamanho || !campoCor || !tamanhoInput || !corInput ||
+    !quantidadeInput || !observacaoInput || !fecharBotao
+  ) {
+    console.error("LU MODA: confira os IDs dos elementos do formulário.");
+    return;
+  }
+
+  function identificarTipo(nome, cartao) {
+    const categoria = (
+      cartao.getAttribute("data-category") ||
+      cartao.getAttribute("data-categoria") ||
+      cartao.getAttribute("data-product-category") ||
+      ""
+    ).toLowerCase();
+
+    if (/perfume|fragr[aâ]ncia/.test(categoria)) return "perfume";
+    if (/roupa|vestu[aá]rio|moda/.test(categoria)) return "roupa";
+
+    if (
+      /\b(perfume|eau de parfum|eau de toilette|parfum|col[oô]nia|body splash)\b/i.test(nome)
+    ) {
+      return "perfume";
+    }
+
+    return "roupa";
+  }
+
+  function obterImagem(cartao) {
+    const img = cartao.querySelector("img");
+
+    if (img) {
+      return (
+        img.currentSrc ||
+        img.getAttribute("data-src") ||
+        img.getAttribute("data-lazy-src") ||
+        img.src ||
+        ""
+      );
+    }
+
+    const elementos = [cartao, ...cartao.querySelectorAll("*")];
+
+    for (const elemento of elementos) {
+      const fundo = getComputedStyle(elemento).backgroundImage;
+
+      if (fundo && fundo !== "none") {
+        const resultado = fundo.match(/url\(["']?(.*?)["']?\)/);
+        if (resultado && resultado[1]) return resultado[1];
+      }
+    }
+
+    return "";
+  }
+
+  function abrirPedido(nome, marca, preco, imagem, tipo) {
+    produtoAtual = nome;
+    marcaAtual = marca;
+    precoAtual = preco;
+    imagemAtual = imagem;
+    tipoAtual = tipo;
+
+    produtoTexto.textContent =
+      nome +
+      (marca ? " — " + marca : "") +
+      (preco ? " — " + preco : "");
+
+    imagemProduto.onerror = function () {
+      imagemProduto.style.display = "none";
+    };
+
+    if (imagem) {
+      imagemProduto.src = imagem;
+      imagemProduto.style.display = "block";
+    } else {
+      imagemProduto.removeAttribute("src");
+      imagemProduto.style.display = "none";
+    }
+
+    const ehRoupa = tipo === "roupa";
+
+    campoTamanho.classList.toggle("lu-campo-oculto", !ehRoupa);
+    campoCor.classList.toggle("lu-campo-oculto", !ehRoupa);
+
+    formulario.reset();
+    quantidadeInput.value = 1;
+
+    overlay.style.display = "flex";
+  }
+
+  function fecharPedido() {
+    overlay.style.display = "none";
+  }
+
+  fecharBotao.addEventListener("click", fecharPedido);
+
+  overlay.addEventListener("click", function (evento) {
+    if (evento.target === overlay) fecharPedido();
+  });
+
+  // Reconhece os botões Sacola dos perfumes e das roupas.
+  document.addEventListener("click", function (evento) {
+    const alvo = evento.target;
+
+    if (!(alvo instanceof Element)) return;
+
+    const botao = alvo.closest(".add-cart-btn");
+    if (!botao) return;
+
+    const cartao = botao.closest(
+      "article, .product-card, [data-product], .group"
+    );
+
+    if (!cartao) return;
+
+    // Nos perfumes, o nome pode estar em data-product-name.
+    // Nas roupas, o nome costuma estar dentro de um h4.
+    const nomeElemento = cartao.querySelector(
+      "[data-product-name], h4"
+    );
+
+    const marcaElemento = cartao.querySelector(
+      "[data-product-brand]"
+    );
+
+    const precoElemento = cartao.querySelector(
+      "[data-price], .font-price-md, .product-price"
+    );
+
+    const nome = (
+      nomeElemento ? nomeElemento.textContent.trim() : ""
+    ) ||
+      cartao.getAttribute("data-product") ||
+      botao.getAttribute("data-product-name") ||
+      "";
+
+    if (!nome) {
+      console.warn("LU MODA: nome do produto não encontrado.", cartao);
+      return;
+    }
+
+    const marca = marcaElemento
+      ? marcaElemento.textContent.trim()
+      : (cartao.getAttribute("data-product-brand") || "");
+
+    const preco = precoElemento
+      ? precoElemento.textContent.trim()
+      : (cartao.getAttribute("data-price") || "");
+
+    const imagem = obterImagem(cartao);
+    const tipo = identificarTipo(nome + " " + marca, cartao);
+
+    evento.preventDefault();
+    evento.stopImmediatePropagation();
+
+    abrirPedido(nome, marca, preco, imagem, tipo);
+  }, true);
+
+  formulario.addEventListener("submit", function (evento) {
+    evento.preventDefault();
+
+    if (!produtoAtual) {
+      alert("Selecione um produto primeiro.");
+      return;
+    }
+
+    const quantidade = quantidadeInput.value || "1";
+    const observacao = observacaoInput.value.trim();
+
+    const mensagem = [
+      "Olá! Quero fazer um pedido na LU MODA.",
+      "",
+      "Produto: " + produtoAtual,
+      marcaAtual ? "Marca/Coleção: " + marcaAtual : "",
+      "Categoria: " + (
+        tipoAtual === "perfume" ? "Perfume" : "Roupa"
+      ),
+      precoAtual ? "Preço informado: " + precoAtual : "",
+      tipoAtual === "roupa" && tamanhoInput.value
+        ? "Tamanho: " + tamanhoInput.value : "",
+      tipoAtual === "roupa" && corInput.value.trim()
+        ? "Cor: " + corInput.value.trim() : "",
+      "Quantidade: " + quantidade,
+      observacao ? "Observações: " + observacao : "",
+      imagemAtual ? "Imagem do produto: " + imagemAtual : "",
+      "",
+      "Por favor, confirme a disponibilidade e o valor total."
+    ].filter(Boolean).join("\n");
+
+    const url =
+      "https://wa.me/" + WHATSAPP +
+      "?text=" + encodeURIComponent(mensagem);
+
+    window.open(url, "_blank");
+  });
+})();
+</script>
+<!-- FIM DO PEDIDO PELO WHATSAPP -->
+</html>
