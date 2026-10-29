@@ -1,30 +1,31 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#EFE7DC">
   <title>Lu Modas - Link na Bio</title>
-
+  
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+  
   <style>
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-
+    
     html {
       width: 100%;
       min-height: 100%;
       overflow-x: hidden;
     }
-
+    
     body {
       width: 100%;
       min-height: 100vh;
@@ -34,7 +35,7 @@
       color: #5C4B37;
       overflow-x: hidden;
     }
-
+    
     /* CONTEÚDO PRINCIPAL */
     .container {
       width: 100%;
@@ -47,19 +48,19 @@
       align-items: center;
       padding-bottom: 0;
     }
-
+    
     /* BANNER SUPERIOR */
     .header-banner {
-      width: 100%;
+      width: 110%;
       margin-bottom: 24px;
     }
-
+    
     .header-banner img {
       display: block;
       width: 100%;
       height: auto;
     }
-
+    
     /* TRÊS CARDS SUPERIORES */
     .grid-top {
       display: grid;
@@ -68,11 +69,11 @@
       width: 92%;
       margin: 0 auto 24px;
     }
-
+    
     .card-top {
       min-width: 0;
       background: #F8F5F0;
-      border: 1.5px solid #D4AF37;
+      border: 3.5px solid #D4AF37;
       border-radius: 18px;
       overflow: hidden;
       display: flex;
@@ -83,61 +84,61 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
+    
     .card-top:active {
       transform: scale(0.98);
     }
-
+    
     .card-top .img-box {
       width: 100%;
-      aspect-ratio: 3 / 4;
+      aspect-ratio: 2 / 3;
       overflow: hidden;
     }
-
+    
     .card-top .img-box img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
+    
     .card-top .icon {
-      margin: 8px 0 4px;
-      font-size: 18px;
+      margin: 15px 0 20px;
+      font-size: 58px;
       color: #C5A059;
     }
-
+    
     .card-top .title {
       font-family: 'Cinzel', serif;
-      font-size: clamp(11px, 2.2vw, 14px);
-      font-weight: 700;
+      font-size: clamp(31px, 2.2vw, 104px);
+      font-weight: 900;
       text-transform: uppercase;
       letter-spacing: 0.4px;
       text-align: center;
       padding: 0 2px;
     }
-
+    
     .card-top .subtitle {
-      font-size: clamp(10px, 1.8vw, 12px);
+      font-size: clamp(20px, 1.8vw, 12px);
       color: #8C7A6B;
-      margin: 3px 2px 10px;
+      margin: 3px 2px 30px;
       text-align: center;
       overflow-wrap: anywhere;
     }
-
+    
     /* DOIS CARDS INFERIORES */
     .grid-bottom {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: clamp(10px, 2vw, 18px);
+      gap: clamp(30px, 30vw, 8px);
       width: 92%;
       margin: 0 auto 30px;
     }
-
+    
     .card-bottom {
       min-width: 0;
       background: #F8F5F0;
-      border: 1.5px solid #D4AF37;
+      border: 3.5px solid #D4AF37;
       border-radius: 22px;
       overflow: hidden;
       display: block;
@@ -145,63 +146,65 @@
       box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
       transition: transform 0.2s, box-shadow 0.2s;
     }
-
+    
     .card-bottom .img-box {
-      width: 100%;
-      aspect-ratio: 4 / 3; /* Ajustado para preencher perfeitamente a tela como na segunda imagem */
+      width: 110%;
+      aspect-ratio: 4 / 3;
+      /* Ajustado para preencher perfeitamente a tela como na segunda imagem */
       overflow: hidden;
     }
-
+    
     .card-bottom .img-box img {
       display: block;
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-
+    
     .card-bottom:active {
       transform: scale(0.98);
     }
-
+    
     /* LOGO INFERIOR */
     .footer-logo {
       width: 100%;
       margin-top: auto;
     }
-
+    
     .footer-logo img {
       display: block;
       width: 100%;
       height: auto;
     }
-
+    
     /* TELAS MUITO PEQUENAS */
     @media (max-width: 360px) {
+
       .grid-top,
       .grid-bottom {
         width: 94%;
         gap: 7px;
       }
-
+      
       .card-top {
         border-radius: 13px;
       }
-
+      
       .card-top .icon {
         font-size: 15px;
       }
-
+      
       .card-top .subtitle {
         font-size: 10px;
       }
     }
-
+    
     /* COMPUTADORES */
     @media (min-width: 901px) {
       .container {
         max-width: 900px;
       }
-
+      
       .grid-top,
       .grid-bottom {
         max-width: 820px;
@@ -212,85 +215,82 @@
 
 <body>
   <main class="container">
-
+    
     <!-- BANNER PRINCIPAL -->
     <header class="header-banner">
       <img src="lu.jpg" alt="Lu Modas - Masculina e Feminina">
     </header>
-
+    
     <!-- CONTATO, CATÁLOGO E INSTAGRAM -->
     <section class="grid-top">
-
-      <a href="https://wa.me/5562981381330"
-         target="_blank" rel="noopener noreferrer"
-         class="card-top">
-
+      
+      <a href="https://wa.me/5562981381330" target="_blank" rel="noopener noreferrer" class="card-top">
+      
         <div class="img-box">
           <img src="zap.jpg" alt="Entre em contato pelo WhatsApp">
         </div>
-
+        
         <div class="icon">
           <i class="fa-solid fa-phone"></i>
         </div>
-
+        
         <div class="title">Contato</div>
         <div class="subtitle">Fale Conosco</div>
       </a>
-
+      
       <a href="roupa.html" class="card-top">
-
+      
         <div class="img-box">
           <img src="loja.jpg" alt="Conheça nosso catálogo">
         </div>
-
+        
         <div class="icon">
           <i class="fa-solid fa-shirt"></i>
         </div>
-
+        
         <div class="title">Catálogo</div>
         <div class="subtitle">Ver Coleção</div>
       </a>
-
-      <a href="https://www.instagram.com/moda_lu2026/"
-         target="_blank" rel="noopener noreferrer"
-         class="card-top">
-
+      
+      <a href="https://www.instagram.com/moda_lu2026/" target="_blank" rel="noopener noreferrer" class="card-top">
+      
         <div class="img-box">
           <img src="insta.jpg" alt="Instagram da Lu Modas">
         </div>
-
+        
         <div class="icon">
           <i class="fa-brands fa-instagram"></i>
         </div>
-
+        
         <div class="title">Instagram</div>
         <div class="subtitle">@moda_lu2026</div>
       </a>
-
+      
     </section>
-
+    
     <!-- EQUIPE E SACOLA -->
     <section class="grid-bottom">
-
+      
       <a href="#" class="card-bottom">
         <div class="img-box">
           <img src="card.png" alt="Equipe Lu Modas">
         </div>
       </a>
-
+      
       <a href="#" class="card-bottom">
         <div class="img-box">
           <img src="sacola.png" alt="Sacola Lu Modas">
         </div>
       </a>
-
+      
     </section>
-
+    
     <!-- LOGO DO RODAPÉ -->
     <footer class="footer-logo">
       <img src="rodape.png" alt="Logo Lu Modas">
     </footer>
-
+    
   </main>
 </body>
+
 </html>
